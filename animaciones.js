@@ -66,3 +66,16 @@ window.onload = function() {
 };
 
 
+const boton= document.getElementById("marioBtn");
+const sonido = document.getElementById("mariomoneda");
+
+boton.addEventListener("click", ()=>{
+  sonido.currentTime = 0;
+  sonido.play();
+
+  boton.style.transform = "traslateY(-10px)";
+  setTimeout(() => {
+    boton.style.transform = "traslateY(0)";
+  }, 150);
+
+})

@@ -161,3 +161,20 @@ hr {
     font-family: 'Courier New', monospace;
     letter-spacing: 1px;
 }
+
+.boton_mario {
+  background: #f6b700;
+  border: 5px solid #a36b00;
+  color: #fff;
+  font-size: 16px;
+  padding: 20px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #a36b00;
+  transition: all 0.1s ease;
+}
+
+.boton_mario:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #a36b00;
+}
