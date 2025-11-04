@@ -78,4 +78,32 @@ boton.addEventListener("click", ()=>{
     boton.style.transform = "traslateY(0)";
   }, 150);
 
-})
+});
+
+document.addEventListener("mousemove", (e) => {
+  const estrella = document.createElement("div");
+  estrella.classList.add("estrella");
+  estrella.style.left = `${e.pageX}px`;
+  estrella.style.top = `${e.pageY}px`;
+  document.body.appendChild(estrella);
+  setTimeout(() => estrella.remove(), 1000);
+});
+
+function cambiarModo() {
+  document.body.classList.toggle("oscuro");
+}
+
+
+function cambiarModo() {
+  const body = document.body;
+  const boton = document.getElementById("modoBtn");
+
+  body.classList.toggle("oscuro");
+  boton.classList.toggle("oscuro");
+
+  if (body.classList.contains("oscuro")) {
+    boton.textContent = "Claro";
+  } else {
+    boton.textContent = "Oscuro";
+  }
+}
