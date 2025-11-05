@@ -157,22 +157,6 @@ hr {
     letter-spacing: 1px;
 }
 
-.boton_mario {
-  background: #f6b700;
-  border: 5px solid #a36b00;
-  color: #fff;
-  font-size: 16px;
-  padding: 20px 30px;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 6px 0 #a36b00;
-  transition: all 0.1s ease;
-}
-
-.boton_mario:active {
-  transform: translateY(6px);
-  box-shadow: 0 0 0 #a36b00;
-}
 
 .estrella {
   position: absolute;
@@ -275,4 +259,61 @@ body.oscuro .checkbox__label {
 
 .checkbox__label:hover .checkbox__custom {
   transform: scale(1.2);
+}
+
+/*Boton mario */
+.contenedor {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.boton_mario {
+  position: relative;
+  background: linear-gradient(180deg, #f6b700, #d68e00);
+  border: 5px solid #a36b00;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  box-shadow: 0 6px 0 #a36b00, inset 0 4px 0 rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  overflow: hidden;
+}
+
+/* Efecto de presionar */
+.boton_mario:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #a36b00;
+}
+
+.question {
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 0 2px 0 #a36b00, 0 -2px 0 #a36b00, 2px 0 0 #a36b00, -2px 0 0 #a36b00;
+  animation: rebote 1s infinite ease-in-out;
+}
+
+/* Efecto de rebote del ? */
+@keyframes rebote {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Brillo intermitente */
+.boton_mario::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: 0.5s;
+}
+
+.boton_mario:hover::before {
+  left: 100%;
 }
